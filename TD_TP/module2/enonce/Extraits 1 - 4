@@ -1,0 +1,127 @@
+Extrait 1 :
+
+a)
+
+Propriétés :
+    - p
+    - d1
+    - d2
+    - d3
+
+Méthode :
+    - Paramètres :
+        - m
+        - d
+    - Corps :
+        - r
+        - t
+
+b)
+
+Propriétés :
+ - p -> penaltyRatio
+ - d1 -> supprimer
+ - d2 -> supprimer
+ - d3 -> supprimer
+
+Méthode :
+    - Paramètres :
+        - m -> member
+        - d -> DayOverdue
+    - Corps :
+        - r -> penalty
+        - t -> memberType
+
+c)
+
+Nom de la méthode : calculatePenalty
+STUDENT / TEACHER => ENUM.
+
+Viole de l'OCP : (Open Close Principle)
+
+
+
+``java
+
+public double calc(Member member, int dayOverdue) {
+        double penalty = 0;
+        String memberType = m.getType();
+        if (memberType.equals("STUDENT")) {
+            r = d * p * 0.5;
+        }
+        if (memberType.equals("TEACHER")) {
+            return 0;
+        return penalty;
+    }
+
+``
+
+
+Extrait 2 :
+
+a)
+
+5
+
+b)
+
+getMemberById(memberId)
+isMemberActive(member) / CheckIfMemberIsActive(member)
+checkIfExpiryDateIsNotPast(tyDate)
+checkIfMemberHasAcceptableNumberOfUnpaidPenalties(member)
+checkMemberLoanQuota(member)
+
+Extrait 3 :
+
+a)
+
+7
+
+b)
+
+BookService
+MemberService
+LoanService
+PenaltyCalculator
+NotificationService
+ReportGenerator
+ReservationService
+
+c)
+
+BookService
+    - Gestion des livres (CRUD)
+MemberService
+    - CRUD des membres
+LoanService
+    - CRUD Empruns
+PenaltyCalculator
+    - Calcul des pénalités de retard par type de membre
+NotificationService
+    - Envoi des notifications
+ReportGenerator
+    - Générateur de rapport
+ReservationService
+    - Création / Supression de réservations.
+
+
+Extrait 4 :
+
+a)
+
+Duplication de code / Manque d'extensibilité
+
+b)
+
+OCP
+
+c)
+
+L'utilisation d'interfaces (DP Stratégie)
+
+
+
+
+
+
+
